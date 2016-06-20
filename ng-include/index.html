@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="App">
+  <head>
+    <meta charset="utf-8">
+    <title>ng-include</title>
+  </head>
+  <body ng-controller="AppCtrl">
+    <h3>Html element</h3>
+    <ng-include src="url"></ng-include>
+
+    <h3>attribute</h3>
+    <span ng-include="url"></span>
+    <h3>Html element</h3>
+    <span class="ng-include: url;"></span>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

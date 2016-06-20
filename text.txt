@@ -1,0 +1,38 @@
+ng-repeat - може перебирати, як масив так і обєкт.
+1) Перебор ng-repeat в ng-repeat (масиву і обєкту):
+  <p ng-repeat="obj in array">
+    <span ng-repeat="property in obj">{{property}}, </span>
+  <p>
+2) Перебор значень обєкту:
+  <p ng-repeat="obj in array">
+    <span ng-repeat="(key, value) in obj">{{key}} = {{value}}, </span>
+  <p>
+3) Додавання номеру до репіту - $index:
+  <tr ng-repeat="item in items">
+    <td>{{$index + 1}}<td>
+    <td>{{item.value}}<td>
+  </tr>
+4) $even $odd
+  <tr ng-repeat="item in items" ng-class="$even ? 'class1' : 'class2'">
+5)ng-first ng-last
+6) ng-repeat-start ng-repeat-end - для того щоб не використовувати врапер
+  <p ng-repeat-start="item in items">{{$index + 1}}</p>
+  <p>{{item.title}}</p>
+  <p ng-repeat-end>{{item.text}}<p>
+--------------------------------------------------------------------------------
+ng-cloak - не дозволяє показувати шаблон {{}} до повної загрузки сторінки
+--------------------------------------------------------------------------------
+ng-option - option for select
+  <select ng-model="selected"
+    ng-option="item.prop for item in items track by item.value">
+  </select>
+  item.prop - буде записаний в option
+  track by item.value - оприділяє яке значення буде записане в value
+--------------------------------------------------------------------------------
+ng-include - скачує частину html-коду, виконує вираз привязки і додає результат
+  на сторінку. Для отримання фрагенту коду використовується ajax.
+  (дивися в папку ng-include)
+  працює тільки на сервері
+
+
+partial view
