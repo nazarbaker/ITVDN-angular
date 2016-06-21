@@ -92,6 +92,11 @@ js то може автоматично не відслідковуватися
 $scope.counter = 0;
 $scope.$watch("counter", function(newValue, oldValue){
   console.log(newValue, oldValue)
+  тут можна запускати будь-який код при зміні counter
+  наприклад робити кнопку disabled
+  $(button).button({
+    disabled: !newValue
+  });
 })
 
 Примусовий обхід $digest()
@@ -106,5 +111,15 @@ setInterval(function(){
 setInterval(function(){
   $scope.$apply(function(){
     $scope.counter++;
+  })
+})
+
+---
+! Зміна стану через jquery
+angularRegion - це id
+
+$(document).ready(function(){
+  $('#button').button().click(function(e){
+    angular.element(angularRegion).scope().$apply("clickHandler()");
   })
 })
