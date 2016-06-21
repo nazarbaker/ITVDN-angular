@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Learn list</title>
+  </head>
+  <body>
+    <div ng-controller="senderCtrl">
+      <p>Sender</p>
+      <input ng-model="messageInput"/>
+      <button type="button" ng-click="send()">send</button>
+    </div>
+
+    <div ng-controller="receiverCtrl">
+      <p>Receiver 1</p>
+      <p>Receiver message - {{info}}</p>
+    </div>
+
+    <div ng-controller="receiverCtrl">
+      <p>Receiver 2</p>
+      <p>Receiver message - {{info}}</p>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
